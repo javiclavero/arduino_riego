@@ -1,12 +1,11 @@
 #include <SPI.h>
-
 #include <RH_NRF24.h>
 
-RH_NRF24 nrf24;
+RH_NRF24 nrf24(8,53); //CE, CSN
 
 void setup() {
   // put your setup code here, to run once:
-  delay(500);
+
   Serial.begin(9600);
   Serial.println(nrf24.init());
   if(!nrf24.init())
@@ -37,7 +36,5 @@ void loop() {
            
     }
 
-
-    
   }
 }
